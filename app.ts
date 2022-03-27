@@ -1,13 +1,9 @@
-const person: {
-    name: string;
-    age: number;
-    hobbies: string[];
-    role: [number, string]
-} = {
+enum Role { ADMIN, READ_ONLY, AUTHOR }
+const person = {
     name: 'Tarun',
     age: 24,
     hobbies: ['Sports', 'Cooking'],
-    role: [1, 'admin']
+    role: Role.ADMIN
 }
 
 console.log(person.name)
