@@ -7,3 +7,9 @@ function printResult(num:number): void {
 }
 
 printResult(add(1,2))
+
+let combinedValues : (a : number, b: number) => number
+
+combinedValues = add
+
+console.log(combinedValues(1,2))
