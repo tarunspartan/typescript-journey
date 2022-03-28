@@ -1,4 +1,7 @@
-function combine(i: number | string, j: number | string, resultConversion: 'as-number' | 'as-text') {
+type Combinable = number | string
+type ConversionDescriptor = 'as-number' | 'as-text'
+
+function combine(i: Combinable, j: Combinable, resultConversion: ConversionDescriptor) {
     let result
     if (typeof i === 'number' && typeof j === 'number' || resultConversion === 'as-number') {
         result = +i + +j
@@ -8,11 +11,11 @@ function combine(i: number | string, j: number | string, resultConversion: 'as-n
     return result
 }
 
-const combinedAges = combine(30,12, 'as-number')
+const combinedAges = combine(30, 12, 'as-number')
 console.log(combinedAges)
 
-const combinedStringAges = combine('30','12', 'as-number')
+const combinedStringAges = combine('30', '12', 'as-number')
 console.log(combinedStringAges)
 
-const combinedNames = combine('Tarun','M', 'as-text')
+const combinedNames = combine('Tarun', 'M', 'as-text')
 console.log(combinedNames)
